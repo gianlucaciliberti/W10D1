@@ -21,24 +21,40 @@ class Table extends Component {
 						onClick={() => this.props.setAppState('Mario Rossi')}
 						className={this.checkSelected('Mario Rossi')}
 					>
+						<h4>
+							Cliccando sul nome lo stato scritto in App cambia
+							valore
+						</h4>
 						Mario Rossi
 					</ListGroup.Item>
 					<ListGroup.Item
 						onClick={() => this.props.setAppState('Giovanna Verdi')}
 						className={this.checkSelected('Giovanna Verdi')}
 					>
+						<h4>
+							Cliccando sul nome lo stato scritto in App cambia
+							valore
+						</h4>
 						Giovanna Verdi
 					</ListGroup.Item>
 					<ListGroup.Item
 						onClick={() => this.props.setAppState('Aldo Bianchi')}
 						className={this.checkSelected('Aldo Bianchi')}
 					>
+						<h4>
+							Cliccando sul nome lo stato scritto in App cambia
+							valore
+						</h4>
 						Aldo Bianchi
 					</ListGroup.Item>
 					<ListGroup.Item
 						onClick={() => this.props.setAppState('Maria Neri')}
 						className={this.checkSelected('Maria Neri')}
 					>
+						<h4>
+							Cliccando sul nome lo stato scritto in App cambia
+							valore
+						</h4>
 						Maria Neri
 					</ListGroup.Item>
 				</ListGroup>
