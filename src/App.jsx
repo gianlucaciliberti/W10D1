@@ -9,44 +9,44 @@ import { Container, Row, Col } from 'react-bootstrap';
 // Il component App deve quindi diventare (per ora) un class component
 
 class App extends Component {
-	// Table avrà come stato la selezione di un elemento di una lista
-	state = {
-		selected: '',
-	};
+  // Table avrà come stato la selezione di un elemento di una lista
+  state = {
+    selected: '',
+  };
 
-	// Ora questo stato può essere comunicato sia a Table che a Details come prop
-	// Sarà però il click su un elemento di lista in Table che dovrà modificare questo stato, quindi ci serve un metodo che faccia questo
+  // Ora questo stato può essere comunicato sia a Table che a Details come prop
+  // Sarà però il click su un elemento di lista in Table che dovrà modificare questo stato, quindi ci serve un metodo che faccia questo
 
-	setAppState = (newValue) => {
-		this.setState({
-			selected: newValue,
-		});
-	};
+  setAppState = (newValue) => {
+    this.setState({
+      selected: newValue,
+    });
+  };
 
-	// L'ideale sarebbe che table invocasse direttamte this.props.setAppState(valore). Per fare questo va passato a Table NON SOLO il valore di state, ma anche un metodo per cambiarlo
+  // L'ideale sarebbe che table invocasse direttamte this.props.setAppState(valore). Per fare questo va passato a Table NON SOLO il valore di state, ma anche un metodo per cambiarlo
 
-	render() {
-		return (
-			<div>
-				<header className='container-fluid bg-dark'>
-					<h1 className='text-center text-light'>STATE ELEVATION</h1>
-				</header>
-				<Container>
-					<Row className='mt-3'>
-						<Col>
-							<Table 
-								// LEGGE lo stato
-								selectedFromApp = {this.state.selected}
-								// Per MODIFICARE lo stato...
-								setAppState = {this.setAppState}
-								// ... passo a Table il metodo setAppState() di riga 20 come PROP
-							/>
-						</Col>
-					</Row>
-				</Container>
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div>
+        <header className='container-fluid bg-dark'>
+          <h1 className='text-center text-light'>STATE ELEVATION</h1>
+        </header>
+        <Container>
+          <Row className='mt-3'>
+            <Col>
+              <Table
+                // LEGGE lo stato
+                selectedFromApp={this.state.selected}
+                // Per MODIFICARE lo stato...
+                setAppState={this.setAppState}
+              // ... passo a Table il metodo setAppState() di riga 20 come PROP
+              />
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    );
+  }
 }
 
 export default App;
